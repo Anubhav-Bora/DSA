@@ -46,14 +46,16 @@ public:
 int main()
 {
     MinStack *obj = new MinStack();
-    obj->push(-2);
-    obj->push(0);
-    obj->push(-3);
-    cout << "Min: " << obj->getMin() << endl; // -3
+    obj->push(5);
+    obj->push(3);
+    obj->push(7);
+    cout << obj->top() << endl;
+    cout << obj->getMin() << endl;
     obj->pop();
-    cout << "Top: " << obj->top() << endl;    // 0
-    cout << "Min: " << obj->getMin() << endl; // -2
-
+    cout << obj->top() << endl;
+    cout << obj->getMin() << endl;
+    obj->pop();
+    cout << obj->getMin() << endl;
     delete obj;
     return 0;
 }
