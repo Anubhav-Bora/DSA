@@ -6,32 +6,25 @@ void solve()
     int n;
     cin >> n;
 
-    if (n % 2 != 0)
+    if (n == 2)
     {
-        for (int i = 0; i < n; i++)
-        {
-            if (i % 2 == 0)
-                cout << -1 << " ";
-            else
-                cout << 3 << " ";
-        }
+        cout << -1 << " " << 2 << "\n";
+        return;
     }
-    else
+
+    for (int i = 0; i < n; i++)
     {
-        if (n == 2)
+        if (i == n - 1 && n % 2 == 0)
         {
-            cout << -1 << " " << 2;
+            cout << 2;
+        }
+        else if (i % 2 == 0)
+        {
+            cout << -1 << " ";
         }
         else
         {
-            for (int i = 0; i < n - 2; i++)
-            {
-                if (i % 2 == 0)
-                    cout << -1 << " ";
-                else
-                    cout << 3 << " ";
-            }
-            cout << -1 << " " << 2;
+            cout << 3 << " ";
         }
     }
     cout << "\n";
@@ -39,10 +32,9 @@ void solve()
 
 int main()
 {
+
     int t;
     cin >> t;
     while (t--)
         solve();
-
-    return 0;
 }
