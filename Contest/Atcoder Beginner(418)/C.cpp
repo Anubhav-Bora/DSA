@@ -7,8 +7,6 @@ void solution(int N, int Q, vector<int> A, vector<int> B, int maxi)
 
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
 
     int N, Q;
     cin >> N >> Q;
