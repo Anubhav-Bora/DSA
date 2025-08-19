@@ -16,11 +16,12 @@ public:
         }
         map<int, int> bloomCount;
         int active = 0;
-        for (auto &[i, j] : diff)
+        for (auto it = diff.begin(); it != diff.end(); it++)
         {
-            active += j;
-            bloomCount[i] = active;
+            active += it->second;
+            bloomCount[it->first] = active;
         }
+
         vector<int> ans;
         for (int t : people)
         {
