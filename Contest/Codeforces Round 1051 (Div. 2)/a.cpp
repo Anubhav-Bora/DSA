@@ -9,42 +9,33 @@ int main()
     {
         int n;
         cin >> n;
-        vector<int> p(n);
+        vector<int> arr(n, 0);
         for (int i = 0; i < n; i++)
         {
-            cin >> p[i];
+            cin >> arr[i];
         }
-
-        bool validRange = true;
-        for (int i = 0; i < n; i++)
+        bool check = true;
+        int curr = 1;
+        int l = 0;
+        int r = n - 1;
+        while (curr <= n)
         {
-            if (p[i] < 1 || p[i] > n)
+            if (arr[l] == curr)
             {
-                validRange = false;
-                break;
+                curr++;
+                l++;
+                continue;
             }
-        }
-
-        if (!validRange)
-        {
-            cout << "NO" << endl;
-            continue;
-        }
-
-        int maxPos = 0;
-        for (int i = 0; i < n; i++)
-        {
-            if (p[i] == n)
+            if (arr[r] == curr)
             {
-                maxPos = i;
-                break;
+                curr++;
+                r--;
+                continue;
             }
+            check = false;
+            break;
         }
-
-        bool ans = false;
-        ans = (maxPos == n / 2);
-
-        if (ans)
+        if (check)
         {
             cout << "YES" << endl;
         }
@@ -53,5 +44,4 @@ int main()
             cout << "NO" << endl;
         }
     }
-    return 0;
 }
