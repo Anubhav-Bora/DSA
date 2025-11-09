@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>;
+using namespace std;
+class Solution
+{
+public:
+    int longestOnes(vector<int> &nums, int k)
+    {
+        int start = 0;
+        int zeroCount = 0;
+        int res = 0;
+        for (int end = 0; end < nums.size(); end++)
+        {
+            if (nums[end] == 0)
+                zeroCount++;
+            while (zeroCount > k)
+            {
+                if (nums[start] == 0)
+                    zeroCount--;
+                start++;
+            }
+            res = max(res, end - start + 1);
+        }
+        return res;
+    }
+};
