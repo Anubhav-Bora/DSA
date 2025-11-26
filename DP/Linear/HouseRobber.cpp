@@ -10,7 +10,7 @@ int rec(int i,vector<int> &nums,vector<int> &dp){
     if(dp[i]!=-1){
         return dp[i];
     }
-    //not_take
+    //not_takec
     int not_take=rec(i+1,nums,dp);
     //take
     int take=rec(i+2,nums,dp)+nums[i];
